@@ -20,7 +20,10 @@ while True: ##Game loop
         screen = gameScreen
 
     if screen.state["status"] == "Game Over":
+<<<<<<< HEAD
         enemiesClicked = gameScreen.enemiesClicked
+=======
+>>>>>>> 8881c8d823bc40fda98d0f277417c607fc9c95bc
         endScreen = EndScreen(window, enemiesClicked)
         screen =  endScreen
 
