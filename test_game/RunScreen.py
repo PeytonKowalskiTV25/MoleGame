@@ -10,7 +10,7 @@ window = Window("Start Screen", (0,255,0)) ##Create the window to work with
 ##Create Screen Objects for use------
 startScreen = StartScreen(window)
 gameScreen = GameScreen(window)
-endScreen = EndScreen(window, enemiesClicked)
+endScreen = None
 ##-----------------------------------
 
 screen = startScreen ##set screen to be the starting screen
@@ -18,11 +18,10 @@ screen = startScreen ##set screen to be the starting screen
 while True: ##Game loop
     ##Enter code here to handle changes between screens---
     if screen.state["status"] == "Game Started":
-        # window = Window("Game Screen", (0,255,0))
         screen = gameScreen
 
     if screen.state["status"] == "Game Over":
-        # window = Window("End Screen", (0,255,0))
+        endScreen = EndScreen(window, enemiesClicked)
         screen =  endScreen
 
 
