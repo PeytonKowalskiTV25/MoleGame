@@ -21,14 +21,15 @@ class GameScreen(Screen):
         self.enemies.remove(enemy)
         self.enemies.append(self.createEnemy())
         self.enemiesClicked += 1
+        
     
     def elementsToDisplay(self):
         elapsedTime = datetime.now() - self.startTime
         remainingTime = self.timeLimit - elapsedTime
         self.elements = [
-            Label((300, 200), 100, 100, "Gaming Time", 14, (0,0,0)),
-            Label((300, 100), 100, 100, f"Kills: {self.enemiesClicked}", 14, (0,0,0)),
-            Label((300, 150), 100, 100, f"Time: {remainingTime.seconds}", 14, (0,0,0))
+            Label((300, 0), 100, 100, "Gaming Time", 14, (0,0,0)),
+            Label((200, 0), 100, 100, f"Kills: {self.enemiesClicked}", 14, (0,0,0)),
+            Label((400, 0), 100, 100, f"Time: {remainingTime.seconds}", 14, (0,0,0))
         ] + self.enemies
         if remainingTime.seconds <= 0 or remainingTime.seconds > 30:
             self.state["status"] = "Game Over"

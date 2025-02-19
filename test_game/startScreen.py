@@ -13,5 +13,5 @@ class StartScreen(Screen):
         self.elements = [
             Label((300, 200), 100, 100, self.state["status"], 14, (0,0,0)), #dynamic element needs arguments
             StartButton(),
-            QuitButton()
+            QuitButton(400, 200)
         ]

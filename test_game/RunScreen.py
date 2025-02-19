@@ -2,7 +2,6 @@ from PyUI.Window import Window
 from GameScreen import GameScreen
 from startScreen import StartScreen
 from EndScreen import EndScreen
-from GameScreen import enemiesClicked
 
 
 window = Window("Start Screen", (0,255,0)) ##Create the window to work with
@@ -21,6 +20,7 @@ while True: ##Game loop
         screen = gameScreen
 
     if screen.state["status"] == "Game Over":
+        enemiesClicked = gameScreen.enemiesClicked
         endScreen = EndScreen(window, enemiesClicked)
         screen =  endScreen
 
@@ -28,5 +28,5 @@ while True: ##Game loop
     ##----------------------------------------------------
 
     window.checkForInput(screen) #checks for inputs on the screen
-    screen.update() #updates the screen
+#   screen.update() #updates the screen
     window.update(screen) #updates the window to reflect the new screen

@@ -1,3 +1,5 @@
+import sys
+import pygame
 from PyUI.Screen import Screen #will need a screen object to extend
 from PyUI.PageElements import * #will need the base element classes to extend
 from random import randint
@@ -27,8 +29,12 @@ class StartButton(Button):
         screen.state["status"] = "Game Started"
 
 class QuitButton(Button):
-    def __init__(self):
-        super().__init__((400, 200), 100, 100, "Quit")
+    def __init__(self, xCoord, yCoord):
+        super().__init__((xCoord, yCoord), 100, 100, "Quit")
+
+    def onClick(self, screen):
+        pygame.quit()
+        sys.exit()   
 
 class Enemy(Button):
     def __init__(self, removeEnemy):
