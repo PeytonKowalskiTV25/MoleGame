@@ -36,9 +36,9 @@ class QuitButton(Button):
         pygame.quit()
         sys.exit()   
 
-class Enemy(Button):
+class Enemy(Image):
     def __init__(self, removeEnemy):
-        super().__init__((randint(0, 500), randint(0,500)), 100, 100, "Enemy")
+        super().__init__((randint(0, 500), randint(0,500)), 100, 100, "./imgus/EvilMole.jpg")
         self.hp = 1
         self.removeEnemy = removeEnemy
 
