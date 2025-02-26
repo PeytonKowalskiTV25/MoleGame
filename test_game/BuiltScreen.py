@@ -33,7 +33,6 @@ class QuitButton(Button):
         super().__init__((xCoord, yCoord), 100, 100, "Quit")
 
     def onClick(self, screen):
-        print("Quit button clicked")  # Debugging statement
         pygame.quit()
         sys.exit()   
 
