@@ -3,7 +3,6 @@ from GameScreen import GameScreen
 from startScreen import StartScreen
 from EndScreen import EndScreen
 
-
 window = Window("Start Screen", (0,255,0)) ##Create the window to work with
 
 ##Create Screen Objects for use------
@@ -21,13 +20,11 @@ while True: ##Game loop
 
     if screen.state["status"] == "Game Over":
         enemiesClicked = gameScreen.enemiesClicked
-        enemiesClicked = gameScreen.enemiesClicked
         endScreen = EndScreen(window, enemiesClicked)
-        screen =  endScreen
-
-
+        screen = endScreen
+        
     ##----------------------------------------------------
 
     window.checkForInput(screen) #checks for inputs on the screen
-#   screen.update() #updates the screen
+#    screen.update() #updates the screen
     window.update(screen) #updates the window to reflect the new screen
